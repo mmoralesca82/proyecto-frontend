@@ -1,0 +1,38 @@
+### Listar productos
+
+GET http://localhost:3000/api/products
+
+### Crear un producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "Mouse",
+  "price": 80.90
+}
+
+### Crear un usuario de prueba
+POST https://mockmentor.onrender.com/auth/register
+Content-Type: application/json
+
+{
+  "firstname": "Victor",
+  "lastname": "G03",
+  "email": "victorg03@gmail.com",
+  "password": "mipassword"
+}
+
+### Login con el usuario de prueba
+POST http://localhost:8095/ms-security/v1/autenticacion/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### Verificacion de token
+
+POST http://localhost:8095/ms-security/v1/autenticacion/verify
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcxNTA1NjY3OCwiZXhwIjoxNzE1MDU2Nzk4fQ.-hMGXoMqoRqG1bW_lSQ3GT_cdNQqnpsWVVEdoWB2DUo
