@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import FormularioActualizacionPaciente from '@/app/components/actualizacion-paciente/FormularioActualizacionPaciente'
+import { Suspense } from 'react'
 
 
 const ActualizacionPaciente = () => {
@@ -17,9 +18,11 @@ const ActualizacionPaciente = () => {
               <div className="flex flex-col space-y-1 text-center">
                 <h3 className="text-xl font-semibold">Actualización de paciente</h3>
               </div>
-                <FormularioActualizacionPaciente 
-                    documento={documento}
-                />
+              <Suspense>
+                  <FormularioActualizacionPaciente 
+                      documento={documento}
+                  />
+              </Suspense>
                 
               </div>
           </div>   
