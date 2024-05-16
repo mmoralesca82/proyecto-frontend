@@ -55,3 +55,25 @@ export const restorePassword = async (form) => {
 //     return await response.json()
 //   }
 
+
+
+export const RegistrarUsuario = async (token, form ) => {
+
+  const API_URL = process.env.NEXT_PUBLIC_MS_SEC_URL
+
+  console.log(token)
+  console.log(form)
+  
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(form)
+  } 
+    
+  const response = await fetch(`${API_URL}/ms-security/v1/system/register`, options)
+
+  return await response.json()
+}
